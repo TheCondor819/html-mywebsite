@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    font: 1em sans-serif;;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+.navbar ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #de3805;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after {
+    width: 100%;
+}
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+.content h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin-top: 80px;
+}
+.content p {
+    font-size: 1.2em;
+    margin: 20px auto;
+    font-weight: 300;
+    line-height: 25px;
+}
+button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #dab1e1;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+span {
+    background: #de3805;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span {
+    width: 100%;
+}
+button:hover {
+    border: none;
+}
+/* ✅ Portfolio Section with Same Background */
+#portfolio {
+    padding: 80px 5%;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Keeps it consistent with the landing page */
+}
+
+/* ✅ Section Heading */
+#portfolio h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #fbfbfb; /* Same highlight color from the landing page */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* ✅ Portfolio Grid */
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ✅ Portfolio Card (Same Color as Landing Page) */
+.project {
+    background: rgba(0, 0, 0, 0.8); /* Dark background to match landing page */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(222, 56, 5, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+}
+
+/* ✅ Project Image */
+.project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 4px solid #faf5f4; /* Same red accent */
+}
+
+/* ✅ Project Info */
+.project-info {
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.project h3 {
+    margin: 10px 0;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.project p {
+    font-size: 1em;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+
+/* ✅ Hover Effects */
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(222, 56, 5, 0.4);
+}
+
+.project:hover .project-info {
+    background: rgba(222, 56, 5, 0.1);
+}
+
+/* ✅ Mobile Responsiveness */
+@media (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+
+    #portfolio h2 {
+        font-size: 2em;
+    }
+}
+
+/* About */
+#about {
+    padding: 80px 5%;
+    color: #000000;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1 {
+    flex-basis: 35%;
+}
+.about-col-1 img {
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(222, 56, 5, 0.4);
+}
+
+.about-col-1 img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(222, 56, 5, 0.4);
+}
+.about-col-2 {
+    flex-basis: 60%;
+}
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #ffffff;
+}
+.about-col-2 p {
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 50px;
+    color: #e8e8e8;
+}
+.about-list {
+    margin-top: 30px;
+    color: #de3805;
+    list-style: none;
+}
+.about-list li {
+    margin-bottom: 10px;
+}
+
+/* ----------------services------------- */
+#services {
+    padding: 80px 5%;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.services-list div {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+    box-shadow: 0 4px 8px rgba(222, 56, 5, 0.3);
+}
+
+.services-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.services-list div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.services-list div a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.services-list div:hover {
+    background: #ff004f;
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px rgba(222, 56, 5, 0.4);
+}
+
+/* ----------------contact------------- */
+#contact {
+    padding: 80px 5%;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto; /* Added margin to create space between the contact section and the form */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(222, 56, 5, 0.3);
+    background: rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+    width: 48%; /* Make name and email input smaller */
+    padding: 10px;
+    margin: 10px 1%; /* Adjust margin for spacing */
+    border: 2px solid #de3805; /* Added border to the text input form */
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    display: inline-block; /* Display inline to align side by side */
+}
+
+.contact-form textarea {
+    width: 100%; /* Make message form bigger */
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #de3805; /* Added border to the text input form */
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Hover Effects */
+.contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(222, 56, 5, 0.4);
+}
+.contact-form button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #dab1e1;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form button span {
+    background: #de3805;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.contact-form button:hover span {
+    width: 100%;
+}
+
+.contact-form button:hover {
+    border: none;
+    background: #de3805;
+    color: white;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-weight: 300;
+    margin-top: 0; /* Remove the space between the footer and contact section */
+    color: white;
+}
